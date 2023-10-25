@@ -3,10 +3,10 @@ def loop(mapping):
     visited = set()
     result = []
     while current_key not in visited and current_key in mapping:
-        result.append(mapping[current_key])
         visited.add(current_key)
+        result.append(mapping[current_key])
         current_key = mapping[current_key]
-
+    result = result[:-1]
     return result
 
 

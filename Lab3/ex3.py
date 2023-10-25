@@ -1,6 +1,19 @@
 def compare(dict1, dict2):
+    if type(dict1) != type(dict2):
+        return False
     if type(dict1) != dict or type(dict2) != dict:
-        return dict1 == dict2
+        if type(dict1) == set or type(dict1) == list:
+            if len(dict1) != len(dict2):
+                return False
+            else:
+                for i in range(len(dict1)):
+                    if dict1[i] != dict2[i]:
+                        return False
+                return True
+        else:
+            if dict1 != dict2:
+                return False
+            return True
     if set(dict1.keys()) != set(dict2.keys()):
         return False
     for key in dict1:
