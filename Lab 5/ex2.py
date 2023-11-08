@@ -52,6 +52,9 @@ class CheckingAccount(Account):
                 self.balance -= amount
                 print("Funds after withdrawal:", self.balance)
 
+    def calculate_interest(self):
+        return 100
+
 
 saving = SavingsAccount(123, 5000, 10)
 saving.deposit(1000)

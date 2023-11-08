@@ -29,8 +29,8 @@ class Triangle:
         self.z = z
 
     def area(self):
-        s = (self.x + self.y + self.z) / 2
-        return (s * (s - self.x) * (s - self.y) * (s - self.z)) ** 0.5
+        p = (self.x + self.y + self.z) / 2
+        return (p * (p - self.x) * (p - self.y) * (p - self.z)) ** 0.5
 
     def perimeter(self):
         return self.x + self.y + self.z

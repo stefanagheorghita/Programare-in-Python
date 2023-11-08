@@ -13,7 +13,7 @@ class Employee:
         print("Employee ID: ", self.id)
 
 
-class Manager:
+class Manager(Employee):
     def __init__(self, name, id, department):
         self.name = name
         self.salary = 5000
@@ -21,10 +21,10 @@ class Manager:
         self.department = department
         self.number_of_employees = 0
 
-    def add_employee(self, employee):
+    def add_employee(self):
         self.number_of_employees += 1
 
-    def remove_employee(self, employee):
+    def remove_employee(self):
         self.number_of_employees -= 1
 
     def print_info(self):
@@ -35,7 +35,7 @@ class Manager:
         print("Manager Employees: ", self.number_of_employees)
 
 
-class Engineer:
+class Engineer(Employee):
     def __init__(self, name, id, department, domain, project, manager):
         self.name = name
         self.salary = 4000
@@ -66,7 +66,7 @@ class Engineer:
         print("Engineer Department: ", self.department)
 
 
-class Salesperson:
+class Salesperson(Employee):
     def __init__(self, name, id, product):
         self.name = name
         self.salary = 3000
@@ -91,10 +91,10 @@ class Salesperson:
 manager = Manager("John", 1, "IT")
 employee1 = Employee("Jack", 1000, 2)
 employee2 = Employee("Ana", 1000, 3)
-manager.add_employee(employee1)
-manager.add_employee(employee2)
+manager.add_employee()
+manager.add_employee()
 manager.print_info()
-manager.remove_employee(employee1)
+manager.remove_employee()
 manager.print_info()
 
 engineer = Engineer("Don", 10, "IT", "Software", "Project 1", manager)
