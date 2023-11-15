@@ -12,12 +12,13 @@ def rename_files(path):
             print("No files found")
             return
 
-        for i, old_name in enumerate(files, start=1):
+        index = 1
+        for old_name in files:
             name, extension = os.path.splitext(old_name)
-            new_name = f"file{i}{extension}"
+            new_name = f"file{index}{extension}"
             old_path = os.path.join(path, old_name)
             new_path = os.path.join(path, new_name)
-
+            index += 1
             try:
                 os.rename(old_path, new_path)
                 print(f"Renamed: {old_name} - {new_name}")
